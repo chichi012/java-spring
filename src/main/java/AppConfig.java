@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 //configure our app to run on spring framework.
-//@ComponentScan({"com.pluralsight"}) is where we want to strt scanning for Beans to autowire
+//@ComponentScan({"com.pluralsight"}) is where we want to start scanning for Beans to autowire
 @Configuration
 @ComponentScan({"com.pluralsight"})
 public class AppConfig {
@@ -27,13 +27,13 @@ public class AppConfig {
 //       service.setRepository(getSpeakerRepository());
        return service;
    }
-*/
+
    @Bean(name = "speakerRepository")
     public SpeakerRepository getSpeakerRepository(){
         return new HibernateSpeakerRepositoryImpl();
    }
 
-
+*/
 
 
 }

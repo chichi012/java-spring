@@ -10,15 +10,18 @@ import java.util.List;
 @Repository("speakerRepository")
 public class HibernateSpeakerRepositoryImpl implements SpeakerRepository {
 
-    @Override
+//    @Override
     public List<Speaker> findAll(){
 //        polymorphism
         List<Speaker> speakers =  new ArrayList<Speaker>();
+
         Speaker speaker = new Speaker();
-        speaker.setFirstName("chi");
-        speaker.setLastName("afam");
+
+        speaker.setFirstName("chidinma");
+        speaker.setLastName("afamefuna");
 
         speakers.add(speaker);
+
         return speakers;
 
     }
