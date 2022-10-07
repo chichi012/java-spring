@@ -7,12 +7,15 @@ import com.pluralsight.repository.SpeakerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service("speakerService")
+@Profile("dev")
 @Scope(value = BeanDefinition.SCOPE_SINGLETON) //but we can skip this line at the class level since by default its a singleton
 public class SpeakerServiceImpl implements SpeakerService {
 //add a finder method ... also help swap our repository tier
@@ -28,6 +31,10 @@ public class SpeakerServiceImpl implements SpeakerService {
 //        this is a Constructor Injection method
 
         repository = speakerRepository;
+    }
+@PostConstruct
+    private void initialize(){
+        System.out.println("we're called after the constructors");
     }
 
     @Override
